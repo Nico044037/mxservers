@@ -3,363 +3,133 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MXServers | Minecraft Hosting</title>
+<title>MXServers | Affordable Minecraft Server Hosting from $1/GB RAM</title>
 
+<meta name="description" content="Affordable Minecraft server hosting with AMD Ryzen CPUs, NVMe SSD storage, DDoS protection and plans starting at just $1 per GB RAM.">
+<meta name="keywords" content="Minecraft hosting, Minecraft server hosting, cheap Minecraft hosting, Ryzen hosting, NVMe SSD">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://mxservers.online/">
+<meta property="og:title" content="MXServers">
+<meta property="og:description" content="Affordable Minecraft Hosting from $1 per GB RAM.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://mxservers.online/">
+<link rel="icon" href="/favicon.ico">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
+<script type="application/ld+json">
+{
+ "@context":"https://schema.org",
+ "@type":"Organization",
+ "name":"MXServers",
+ "url":"https://mxservers.online"
+}
+</script>
+
 <style>
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Poppins,sans-serif;
-scroll-behavior:smooth;
-}
-
-body{
-background:#0a0a0a;
-color:white;
-overflow-x:hidden;
-}
-
-body::before{
-content:"";
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:
-radial-gradient(circle at top,#00ff8860,transparent 45%),
-radial-gradient(circle at bottom,#00bfff30,transparent 40%);
-z-index:-1;
-}
-
-header{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:20px 8%;
-position:fixed;
-width:100%;
-background:rgba(0,0,0,.7);
-backdrop-filter:blur(10px);
-z-index:999;
-}
-
-.logo{
-font-size:32px;
-font-weight:800;
-color:#00ff88;
-}
-
-nav a{
-text-decoration:none;
-color:white;
-margin-left:30px;
-font-weight:600;
-transition:.3s;
-}
-
-nav a:hover{
-color:#00ff88;
-}
-
-.hero{
-height:100vh;
-display:flex;
-justify-content:center;
-align-items:center;
-text-align:center;
-padding:20px;
-}
-
-.hero h1{
-font-size:70px;
-margin-bottom:20px;
-}
-
-.hero span{
-color:#00ff88;
-}
-
-.hero p{
-font-size:22px;
-opacity:.9;
-line-height:1.7;
-margin-bottom:40px;
-}
-
-.button{
-display:inline-block;
-padding:16px 40px;
-background:#00ff88;
-color:#111;
-text-decoration:none;
-font-weight:700;
-border-radius:10px;
-transition:.3s;
-}
-
-.button:hover{
-transform:translateY(-5px);
-box-shadow:0 0 30px #00ff88;
-}
-
-.section{
-padding:100px 8%;
-}
-
-.title{
-font-size:45px;
-text-align:center;
-margin-bottom:50px;
-}
-
-.cards{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:25px;
-}
-
-.card{
-background:#151515;
-padding:30px;
-border-radius:15px;
-border:1px solid #222;
-transition:.3s;
-}
-
-.card:hover{
-border-color:#00ff88;
-transform:translateY(-8px);
-}
-
-.card h3{
-color:#00ff88;
-margin-bottom:15px;
-}
-
-.pricing{
-text-align:center;
-}
-
-.plan{
-display:inline-block;
-background:#151515;
-padding:45px;
-border-radius:20px;
-margin-top:30px;
-width:350px;
-max-width:100%;
-}
-
-.price{
-font-size:70px;
-color:#00ff88;
-font-weight:800;
-}
-
-.plan ul{
-list-style:none;
-margin:30px 0;
-text-align:left;
-}
-
-.plan li{
-padding:8px 0;
-}
-
-footer{
-padding:40px;
-text-align:center;
-background:#050505;
-color:#888;
-margin-top:80px;
-}
-
-.discord{
-font-size:38px;
-color:#00ff88;
-font-weight:700;
-margin-top:20px;
-}
-
-@media(max-width:700px){
-
-.hero h1{
-font-size:42px;
-}
-
-.hero p{
-font-size:18px;
-}
-
-.logo{
-font-size:25px;
-}
-
-nav{
-display:none;
-}
-
-}
+*{margin:0;padding:0;box-sizing:border-box;font-family:Poppins,sans-serif;scroll-behavior:smooth}
+body{background:#0a0a0a;color:#fff;line-height:1.7}
+body:before{content:"";position:fixed;inset:0;background:
+radial-gradient(circle at top,#00ff8850,transparent 40%),
+radial-gradient(circle at bottom,#00bfff30,transparent 40%);z-index:-1}
+header{position:fixed;top:0;width:100%;display:flex;justify-content:space-between;align-items:center;padding:20px 8%;background:rgba(0,0,0,.75);backdrop-filter:blur(10px);z-index:10}
+.logo{font-size:2rem;font-weight:800;color:#00ff88}
+nav a{color:#fff;text-decoration:none;margin-left:25px;font-weight:600}
+nav a:hover,.button:hover{opacity:.9}
+.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:100px 20px 20px}
+.hero h1{font-size:4rem}
+.hero span{color:#00ff88}
+.button{display:inline-block;margin-top:30px;padding:16px 36px;background:#00ff88;color:#111;text-decoration:none;font-weight:700;border-radius:10px;transition:.3s}
+.button:hover{transform:translateY(-4px);box-shadow:0 0 20px #00ff88}
+.section{padding:90px 8%}
+.title{text-align:center;font-size:2.5rem;margin-bottom:40px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:24px}
+.card{background:#151515;padding:28px;border-radius:14px;border:1px solid #222;transition:.3s}
+.card:hover{transform:translateY(-8px);border-color:#00ff88}
+.card h3{color:#00ff88;margin-bottom:12px}
+.plan{max-width:420px;margin:0 auto;background:#151515;padding:40px;border-radius:18px;text-align:center}
+.price{font-size:4rem;color:#00ff88;font-weight:800}
+ul{padding-left:20px}
+footer{padding:40px;text-align:center;background:#050505;color:#aaa}
+@media(max-width:700px){.hero h1{font-size:2.5rem}nav{display:none}}
 </style>
 </head>
-
 <body>
 
 <header>
-
-<div class="logo">
-MXServers
-</div>
-
+<div class="logo">MXServers</div>
 <nav>
 <a href="#features">Features</a>
+<a href="#why">Why Us</a>
 <a href="#pricing">Pricing</a>
+<a href="#faq">FAQ</a>
 <a href="#contact">Contact</a>
 </nav>
-
 </header>
 
 <section class="hero">
-
 <div>
-
-<h1>
-Welcome to <span>MXServers</span>
-</h1>
-
-<p>
-Fast Minecraft Hosting<br>
-Only <b>$1 per GB RAM</b><br>
-High-performance hosting for your Minecraft server.
-</p>
-
-<a class="button" href="#contact">
-Contact on Discord
-</a>
-
+<h1>Premium <span>Minecraft Hosting</span></h1>
+<p>Powerful AMD Ryzen CPUs, NVMe SSD storage, enterprise DDoS protection and instant deployment.<br><strong>Starting at only $1 per GB RAM.</strong></p>
+<a class="button" href="#contact">Order Your Server</a>
 </div>
-
 </section>
 
-<section class="section" id="features">
-
-<h2 class="title">
-Features
-</h2>
-
+<section id="features" class="section">
+<h2 class="title">Features</h2>
 <div class="cards">
-
-<div class="card">
-<h3>⚡ Instant Setup</h3>
-<p>Create your Minecraft server within seconds.</p>
+<div class="card"><h3>⚡ Instant Setup</h3><p>Deploy your Minecraft server within seconds.</p></div>
+<div class="card"><h3>🚀 Ryzen CPUs</h3><p>High clock-speed AMD Ryzen processors.</p></div>
+<div class="card"><h3>💾 NVMe SSD</h3><p>Fast world loading and reduced lag.</p></div>
+<div class="card"><h3>🛡 DDoS Protection</h3><p>Enterprise-grade attack mitigation.</p></div>
+<div class="card"><h3>📂 Full File Access</h3><p>Manage plugins, mods and worlds freely.</p></div>
+<div class="card"><h3>🌍 Multiple Locations</h3><p>Choose a location close to your players.</p></div>
 </div>
-
-<div class="card">
-<h3>🛡 DDoS Protection</h3>
-<p>Protected against attacks with enterprise-grade filtering.</p>
-</div>
-
-<div class="card">
-<h3>🚀 Ryzen CPUs</h3>
-<p>Powerful AMD Ryzen processors for excellent performance.</p>
-</div>
-
-<div class="card">
-<h3>📂 Full FTP Access</h3>
-<p>Upload worlds, plugins, mods, and files anytime.</p>
-</div>
-
-<div class="card">
-<h3>💾 NVMe SSD Storage</h3>
-<p>Ultra-fast loading speeds and reduced lag.</p>
-</div>
-
-<div class="card">
-<h3>🌍 Global Locations</h3>
-<p>Choose the location that best suits your players.</p>
-</div>
-
-</div>
-
 </section>
 
-<section class="section pricing" id="pricing">
+<section id="why" class="section">
+<h2 class="title">Why Choose MXServers?</h2>
+<p>MXServers provides reliable Minecraft server hosting for Java and Bedrock Edition. Whether you run a small survival server or a larger community, our infrastructure is designed for high performance, low latency and stability. Every server includes NVMe SSD storage, AMD Ryzen processors, DDoS protection and full file access so you can install Paper, Spigot, Purpur, Fabric or Forge with ease.</p>
+</section>
 
-<h2 class="title">
-Pricing
-</h2>
-
+<section id="pricing" class="section">
+<h2 class="title">Pricing</h2>
 <div class="plan">
-
-<h2>Starter Plan</h2>
-
-<div class="price">
-$1
-</div>
-
+<h2>Starter</h2>
+<div class="price">$1</div>
 <p>Per GB RAM</p>
-
 <ul>
-
-<li>✅ Unlimited Slots</li>
-<li>✅ NVMe SSD</li>
-<li>✅ Ryzen CPUs</li>
-<li>✅ DDoS Protection</li>
-<li>✅ Full File Access</li>
-<li>✅ 24/7 Support</li>
-
+<li>Unlimited Player Slots</li>
+<li>NVMe SSD Storage</li>
+<li>AMD Ryzen CPU</li>
+<li>DDoS Protection</li>
+<li>FTP/File Access</li>
+<li>24/7 Support</li>
 </ul>
-
-<a class="button" href="#contact">
-Contact
-</a>
-
+<a class="button" href="#contact">Get Started</a>
 </div>
-
 </section>
 
-<section class="section" id="contact">
-
-<h2 class="title">
-Contact
-</h2>
-
-<div style="text-align:center;">
-
-<p>
-Interested in our hosting?
-</p>
-
-<div class="discord">
-DM <strong>nico044037</strong> on Discord
+<section id="faq" class="section">
+<h2 class="title">Frequently Asked Questions</h2>
+<div class="cards">
+<div class="card"><h3>Do you support plugins?</h3><p>Yes. Paper, Spigot, Bukkit and Purpur are supported.</p></div>
+<div class="card"><h3>Can I install mods?</h3><p>Yes. Fabric and Forge are fully supported.</p></div>
+<div class="card"><h3>Is DDoS protection included?</h3><p>Yes, on every server.</p></div>
+<div class="card"><h3>Can I upload my world?</h3><p>Yes, using FTP or the file manager.</p></div>
 </div>
+</section>
 
-<br><br>
-
-<a class="button" href="#">
-Copy Username
-</a>
-
-</div>
-
+<section id="contact" class="section" style="text-align:center">
+<h2 class="title">Contact</h2>
+<p>Ready to launch your Minecraft server?</p>
+<h3 style="color:#00ff88;margin:20px 0">Discord: nico044037</h3>
+<a class="button" href="https://discord.com/">Contact on Discord</a>
 </section>
 
 <footer>
-
-<h2 style="color:#00ff88;">
-MXServers
-</h2>
-
-<br>
-
-<p>
-Minecraft Hosting
-</p>
-
+<h2 style="color:#00ff88">MXServers</h2>
+<p>Affordable Minecraft Server Hosting</p>
+<p style="margin-top:10px">© 2026 MXServers. All rights reserved.</p>
 </footer>
 
 </body>
