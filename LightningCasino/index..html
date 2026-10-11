@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#080b18">
+<meta name="description" content="Join Lightning Casino, an electrifying Minecraft server.">
+<title>Lightning Casino | Minecraft Server</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+    --bg: #080b18;
+    --panel: #11182d;
+    --blue: #50d8ff;
+    --purple: #8874ff;
+    --white: #f4f6ff;
+    --muted: #9aa6c4;
+    --border: rgba(157,177,255,.16);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--bg);
+    color: var(--white);
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 18px;
+    overflow-x: hidden;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button {
+    font-family: inherit;
+}
+
+.gradient {
+    background: linear-gradient(100deg, #54e0ff, #9383ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.topbar {
+    min-height: 82px;
+    padding: 18px 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--border);
+    background: rgba(8,11,24,.95);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    backdrop-filter: blur(15px);
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font: 800 15px 'Orbitron', sans-serif;
+    letter-spacing: 1px;
+}
+
+.brand-icon {
+    display: grid;
+    place-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    color: #080b18;
+    background: linear-gradient(135deg, var(--blue), var(--purple));
+    font-size: 28px;
+}
+
+.brand span:last-child {
+    color: var(--blue);
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    gap: 27px;
+    color: var(--muted);
+    font-weight: 700;
+}
+
+.nav a:hover {
+    color: var(--blue);
+}
+
+.nav .discord-nav {
+    border: 1px solid rgba(80,216,255,.45);
+    border-radius: 8px;
+    padding: 10px 15px;
+    color: var(--white);
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: 0;
+    color: white;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+.hero {
+    min-height: 650px;
+    padding: 90px 10%;
+    display: grid;
+    grid-template-columns: 1.1fr .9fr;
+    align-items: center;
+    gap: 40px;
+    position: relative;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    width: 350px;
+    height: 350px;
+    background: #504cff;
+    filter: blur(160px);
+    opacity: .17;
+    right: 8%;
+    top: 20%;
+    pointer-events: none;
+}
+
+.eyebrow {
+    color: var(--blue);
+    font: 700 11px 'Orbitron', sans-serif;
+    letter-spacing: 2px;
+}
+
+h1, h2 {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 800;
+    line-height: 1.15;
+}
+
+h1 {
+    font-size: clamp(44px, 6vw, 78px);
+    margin: 25px 0;
+    letter-spacing: -2px;
+}
+
+.hero-description {
+    max-width: 500px;
+    color: var(--muted);
+    font-size: 21px;
+    line-height: 1.6;
+}
+
+.buttons {
+    display: flex;
+    gap: 13px;
+    flex-wrap: wrap;
+    margin-top: 28px;
+}
+
+.button {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 20px;
+    border-radius: 8px;
+    font-weight: 700;
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.button:hover {
+    transform: translateY(-3px);
+}
+
+.primary {
+    background: linear-gradient(110deg, var(--blue), var(--purple));
+    color: #080b18;
+    box-shadow: 0 8px 30px rgba(80,216,255,.12);
+}
+
+.secondary {
+    border-color: var(--border);
+    background: rgba(255,255,255,.03);
+    color: var(--white);
+}
+
+.server-box {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 15px;
+    border: 1px solid var(--border);
+    background: rgba(255,255,255,.025);
+    border-radius: 10px;
+    margin-top: 30px;
+    max-width: 460px;
+}
+
+.status-dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: #5af2b4;
+    box-shadow: 0 0 12px #5af2b4;
+    flex-shrink: 0;
+}
+
+.server-box small {
+    display: block;
+    color: var(--muted);
+    font-size: 10px;
+    letter-spacing: 1px;
+}
+
+.server-box strong {
+    display: block;
+    font: 600 12px 'Orbitron', sans-serif;
+    margin-top: 6px;
+    overflow-wrap: anywhere;
+}
+
+.copy-feedback {
+    color: #5af2b4;
+    font-size: 14px;
+    margin-top: 10px;
+    min-height: 18px;
+}
+
+.hero-art {
+    display: grid;
+    place-items: center;
+    min-height: 380px;
+    position: relative;
+}
+
+.energy-circle {
+    width: min(300px, 65vw);
+    height: min(300px, 65vw);
+    border: 1px solid rgba(80,216,255,.5);
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    background: radial-gradient(circle, rgba(80,216,255,.16), rgba(136,116,255,.08), transparent 70%);
+    box-shadow: 0 0 90px rgba(80,216,255,.1);
+    position: relative;
+}
+
+.energy-circle::before,
+.energy-circle::after {
+    content: "";
+    position: absolute;
+    inset: -25px;
+    border: 1px solid rgba(136,116,255,.3);
+    border-radius: 50%;
+    transform: rotate(30deg) scaleY(.7);
+}
+
+.energy-circle::after {
+    transform: rotate(-35deg) scaleY(.8);
+}
+
+.lightning {
+    font-size: 180px;
+    color: var(--blue);
+    text-shadow: 0 0 20px var(--blue), 0 0 70px var(--purple);
+    line-height: 1;
+}
+
+.art-label {
+    position: absolute;
+    bottom: 5px;
+    color: var(--muted);
+    font: 700 10px 'Orbitron', sans-serif;
+    letter-spacing: 3px;
+}
+
+.ticker {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+    padding: 22px;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    background: rgba(255,255,255,.025);
+    color: #b3c0df;
+    font: 700 10px 'Orbitron', sans-serif;
+    letter-spacing: 1px;
+}
+
+.ticker span {
+    color: var(--blue);
+}
+
+.section {
+    padding: 100px 9%;
+}
+
+.section-heading {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 45px;
+}
+
+.section-heading h2,
+.community h2 {
+    font-size: clamp(29px, 4vw, 45px);
+    margin: 18px 0;
+}
+
+.section-heading p,
+.community p {
+    color: var(--muted);
+    font-size: 19px;
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.feature-card {
+    background: linear-gradient(145deg, #151d36, #0d1224);
+    border: 1px solid var(--border);
+    border-radius: 13px;
+    padding: 30px;
+    transition: .2s;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(80,216,255,.5);
+}
+
+.feature-icon {
+    color: var(--blue);
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.feature-card h3 {
+    font: 700 16px 'Orbitron', sans-serif;
+    margin-bottom: 13px;
+}
+
+.feature-card p {
+    color: var(--muted);
+    line-height: 1.6;
+}
+
+.feature-number {
+    display: block;
+    color: #7584a8;
+    font: 700 10px 'Orbitron', sans-serif;
+    margin-top: 25px;
+    letter-spacing: 1px;
+}
+
+.join-section {
+    padding: 20px 7% 90px;
+}
+
+.join-panel {
+    max-width: 1200px;
+    margin: auto;
+    padding: 60px 7%;
+    border: 1px solid rgba(111,143,255,.25);
+    border-radius: 18px;
+    background: radial-gradient(circle at 90% 40%, rgba(92,94,255,.14), transparent 35%), #10162a;
+    display: grid;
+    grid-template-columns: 1.3fr .7fr;
+    gap: 40px;
+    align-items: center;
+}
+
+.join-panel h2 {
+    font-size: clamp(28px, 4vw, 43px);
+    margin: 18px 0;
+}
+
+.join-panel p {
+    color: var(--muted);
+    line-height: 1.5;
+}
+
+.steps {
+    display: grid;
+    gap: 16px;
+    margin: 28px 0;
+}
+
+.step {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+}
+
+.step-number {
+    display: grid;
+    place-items: center;
+    min-width: 30px;
+    height: 30px;
+    border: 1px solid rgba(80,216,255,.5);
+    border-radius: 8px;
+    color: var(--blue);
+    font-weight: 700;
+}
+
+.step p strong {
+    color: var(--white);
+}
+
+.ip-box {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    padding-left: 15px;
+    background: rgba(0,0,0,.25);
+    border: 1px solid var(--border);
+    border-radius: 9px;
+}
+
+.ip-box code {
+    font: 600 12px 'Orbitron', sans-serif;
+    overflow-wrap: anywhere;
+}
+
+.ip-box button {
+    background: var(--blue);
+    border: none;
+    border-radius: 6px;
+    padding: 12px;
+    font: 800 10px 'Orbitron', sans-serif;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.join-art {
+    text-align: center;
+    font-size: 150px;
+    color: var(--blue);
+    text-shadow: 0 0 45px rgba(80,216,255,.5);
+}
+
+.community {
+    text-align: center;
+    padding: 50px 7% 100px;
+}
+
+.community p {
+    margin-bottom: 25px;
+}
+
+.footer {
+    border-top: 1px solid var(--border);
+    padding: 40px 7% 25px;
+    text-align: center;
+    background: rgba(0,0,0,.15);
+}
+
+.footer .brand {
+    justify-content: center;
+}
+
+.footer > p {
+    color: var(--muted);
+    margin-top: 15px;
+}
+
+.footer-meta {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px 30px;
+    margin: 28px 0;
+    color: #8b98b8;
+    font: 600 10px 'Orbitron', sans-serif;
+}
+
+.footer-meta strong,
+.footer-meta a {
+    color: var(--blue);
+}
+
+.disclaimer {
+    color: #65718f;
+    font-size: 12px;
+}
+
+@media (max-width: 850px) {
+    .hero {
+        grid-template-columns: 1fr;
+        padding: 75px 7%;
+    }
+
+    .hero-art {
+        min-height: 330px;
+    }
+
+    .feature-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .join-panel {
+        grid-template-columns: 1fr;
+    }
+
+    .join-art {
+        display: none;
+    }
+}
+
+@media (max-width: 650px) {
+    .topbar {
+        padding: 15px 5%;
+    }
+
+    .brand {
+        font-size: 11px;
+        gap: 7px;
+    }
+
+    .brand-icon {
+        width: 34px;
+        height: 34px;
+        font-size: 23px;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: #0c1123;
+        padding: 22px 7%;
+        border-bottom: 1px solid var(--border);
+        flex-direction: column;
+        align-items: stretch;
+        gap: 20px;
+    }
+
+    .nav.open {
+        display: flex;
+    }
+
+    .nav .discord-nav {
+        text-align: center;
+    }
+
+    .hero {
+        padding: 60px 6%;
+    }
+
+    .hero-description {
+        font-size: 18px;
+    }
+
+    .lightning {
+        font-size: 140px;
+    }
+
+    .energy-circle {
+        width: 220px;
+        height: 220px;
+    }
+
+    .section {
+        padding: 75px 6%;
+    }
+
+    .join-panel {
+        padding: 35px 22px;
+    }
+
+    .ip-box {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .ip-box button {
+        width: 100%;
+    }
+
+    .ticker {
+        gap: 12px;
+        font-size: 8px;
+    }
+
+    .footer-meta {
+        flex-direction: column;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header class="topbar">
+    <a class="brand" href="#home">
+        <span class="brand-icon">ϟ</span>
+        <span>LIGHTNING<span>CASINO</span></span>
+    </a>
+
+    <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+
+    <nav class="nav">
+        <a href="#features">Features</a>
+        <a href="#how-to-join">How to Join</a>
+        <a href="#community">Community</a>
+        <a class="discord-nav" href="https://discord.gg/EeCRrXqFKY" target="_blank" rel="noopener noreferrer">Join Discord ↗</a>
+    </nav>
+</header>
+
+<main>
+
+<section class="hero" id="home">
+    <div>
+        <div class="eyebrow">⚡ YOUR NEXT ADVENTURE STARTS HERE</div>
+
+        <h1>
+            FEEL THE<br>
+            <span class="gradient">ELECTRIC</span><br>
+            ENERGY.
+        </h1>
+
+        <p class="hero-description">
+            Welcome to Lightning Casino — your next Minecraft destination.
+            Join the community, meet new players, and create unforgettable memories.
+        </p>
+
+        <div class="buttons">
+            <button class="button primary" id="copy-ip">⚡ Copy Server IP</button>
+            <a class="button secondary" href="#features">Explore Server ↓</a>
+        </div>
+
+        <div class="server-box">
+            <span class="status-dot"></span>
+            <div>
+                <small>MINECRAFT SERVER ADDRESS</small>
+                <strong>lightningcasino.minefort.com</strong>
+            </div>
+        </div>
+
+        <p class="copy-feedback" id="copy-feedback" aria-live="polite"></p>
+    </div>
+
+    <div class="hero-art">
+        <div class="energy-circle">
+            <span class="lightning">ϟ</span>
+        </div>
+        <div class="art-label">POWER UP YOUR GAME</div>
+    </div>
+</section>
+
+<div class="ticker">
+    <div><span>⚡</span> MINECRAFT COMMUNITY</div>
+    <div><span>✦</span> GOOD VIBES</div>
+    <div><span>⚡</span> YOUR NEXT ADVENTURE</div>
+</div>
+
+<section class="section" id="features">
+    <div class="section-heading">
+        <div class="eyebrow">WHY LIGHTNING CASINO?</div>
+        <h2>MORE THAN A <span class="gradient">SERVER.</span></h2>
+        <p>A place to play, connect, and make your mark.</p>
+    </div>
+
+    <div class="feature-grid">
+        <article class="feature-card">
+            <div class="feature-icon">ϟ</div>
+            <h3>Fast-Paced Fun</h3>
+            <p>Jump into Minecraft, explore the server, and find your next adventure.</p>
+            <span class="feature-number">01 / PLAY</span>
+        </article>
+
+        <article class="feature-card">
+            <div class="feature-icon">◇</div>
+            <h3>Great Community</h3>
+            <p>Bring your friends, meet new players, and become part of the community.</p>
+            <span class="feature-number">02 / CONNECT</span>
+        </article>
+
+        <article class="feature-card">
+            <div class="feature-icon">✦</div>
+            <h3>Your Next Story</h3>
+            <p>Every session brings new opportunities to play, explore, and have fun.</p>
+            <span class="feature-number">03 / DISCOVER</span>
+        </article>
+    </div>
+</section>
+
+<section class="join-section" id="how-to-join">
+    <div class="join-panel">
+        <div>
+            <div class="eyebrow">READY WHEN YOU ARE</div>
+
+            <h2>YOUR ADVENTURE<br>IS ONE CLICK <span class="gradient">AWAY.</span></h2>
+
+            <p>Join Lightning Casino in just three simple steps.</p>
+
+            <div class="steps">
+                <div class="step">
+                    <span class="step-number">1</span>
+                    <p>Open <strong>Minecraft Java Edition</strong></p>
+                </div>
+
+                <div class="step">
+                    <span class="step-number">2</span>
+                    <p>Choose <strong>Multiplayer → Add Server</strong></p>
+                </div>
+
+                <div class="step">
+                    <span class="step-number">3</span>
+                    <p>Enter our server address and join!</p>
+                </div>
+            </div>
+
+            <div class="ip-box">
+                <code id="server-ip">lightningcasino.minefort.com</code>
+                <button id="copy-ip-bottom">COPY IP ↗</button>
+            </div>
+
+            <p class="copy-feedback" id="copy-feedback-bottom" aria-live="polite"></p>
+        </div>
+
+        <div class="join-art">ϟ</div>
+    </div>
+</section>
+
+<section class="community section" id="community">
+    <div class="eyebrow">STAY IN THE LOOP</div>
+
+    <h2>THE NEXT MOVE IS <span class="gradient">YOURS.</span></h2>
+
+    <p>Join our Discord, meet the community, and get involved.</p>
+
+    <div class="buttons" style="justify-content:center;">
+        <a class="button primary" href="https://discord.gg/EeCRrXqFKY" target="_blank" rel="noopener noreferrer">
+            Join Our Discord ↗
+        </a>
+
+        <a class="button secondary" href="#how-to-join">
+            Join Minecraft ⚡
+        </a>
+    </div>
+</section>
+
+</main>
+
+<footer class="footer">
+    <a class="brand" href="#home">
+        <span class="brand-icon">ϟ</span>
+        <span>LIGHTNING<span>CASINO</span></span>
+    </a>
+
+    <p>A community Minecraft server. Play fair. Have fun.</p>
+
+    <div class="footer-meta">
+        <span>GAME SERVER HOSTED BY <strong>MINEFORT</strong></span>
+        <span>
+            WEBSITE HOSTED BY
+            <strong>MXSERVERS</strong> ·
+            <a href="https://mxservers.online" target="_blank" rel="noopener noreferrer">mxservers.online</a>
+        </span>
+        <span>
+            <a href="https://discord.gg/EeCRrXqFKY" target="_blank" rel="noopener noreferrer">DISCORD COMMUNITY ↗</a>
+        </span>
+    </div>
+
+    <small class="disclaimer">
+        Not affiliated with or endorsed by Mojang or Microsoft.
+        Minecraft is a trademark of Mojang Synergies AB.
+    </small>
+</footer>
+
+<script>
+const SERVER_IP = "lightningcasino.minefort.com";
+
+async function copyServerIP(feedbackID) {
+    const feedback = document.getElementById(feedbackID);
+
+    try {
+        await navigator.clipboard.writeText(SERVER_IP);
+
+        if (feedback) {
+            feedback.textContent = "Server IP copied successfully!";
+        }
+    } catch (error) {
+        const textarea = document.createElement("textarea");
+
+        textarea.value = SERVER_IP;
+        textarea.style.position = "fixed";
+        textarea.style.opacity = "0";
+
+        document.body.appendChild(textarea);
+        textarea.select();
+
+        const copied = document.execCommand("copy");
+        textarea.remove();
+
+        if (feedback) {
+            feedback.textContent = copied
+                ? "Server IP copied successfully!"
+                : "Copy failed. Server IP: " + SERVER_IP;
+        }
+    }
+}
+
+document.getElementById("copy-ip").addEventListener("click", function() {
+    copyServerIP("copy-feedback");
+});
+
+document.getElementById("copy-ip-bottom").addEventListener("click", function() {
+    copyServerIP("copy-feedback-bottom");
+});
+
+const menuToggle = document.querySelector(".menu-toggle");
+const nav = document.querySelector(".nav");
+
+menuToggle.addEventListener("click", function() {
+    const isOpen = nav.classList.toggle("open");
+
+    menuToggle.setAttribute("aria-expanded", String(isOpen));
+});
+
+nav.querySelectorAll("a").forEach(function(link) {
+    link.addEventListener("click", function() {
+        nav.classList.remove("open");
+        menuToggle.setAttribute("aria-expanded", "false");
+    });
+});
+</script>
+
+</body>
+</html>
